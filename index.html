@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/1705cecfe7.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1> Accounting for my expenses</h1>
+        <div class="inputs">
+            <div class="flex-column">
+                <label for="store">Where was it spent:</label> <br>
+                <input type="text" id="store">
+            </div>
+
+            <div class="flex-column">
+                <label for="price">Where was it spent:</label> <br>
+                <input type="text" id="price">
+            </div>
+            <button title="add item">Add</button>
+        </div>
+        <h3>Total: 100 Dollars</h3>
+
+
+        <div class="list">
+            <ol>
+                <li>
+                    <p class="store-name">{%STORE-NAME%}</p>
+                    <p class="date">{%DATE%}</p>
+                    <p class="price">{%PRICE%}</p>
+                    <i class="fa-solid fa-pencil" title="edit item"></i>
+                    <i class="fa-solid fa-trash" title="delete item"></i>
+                </li>
+                <li>
+                    <p class="store-name">{%STORE-NAME%}</p>
+                    <p class="date">{%DATE%}</p>
+                    <p class="price">{%PRICE%}</p>
+                    <i class="fa-solid fa-pencil" title="edit item"></i>
+                    <i class="fa-solid fa-trash" title="delete item"></i>
+                </li>
+                <li>
+                    <p class="store-name">{%STORE-NAME%}</p>
+                    <p class="date">{%DATE%}</p>
+                    <p class="price">{%PRICE%}</p>
+                    <i class="fa-solid fa-pencil" title="edit item"></i>
+                    <i class="fa-solid fa-trash" title="delete item"></i>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #bdd7ff;
+}
+
+body {
+    background: #14141f;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 70px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 280px;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+}
+
+h3, p, label{
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+}
+
+h3 {
+    margin-left: 32rem;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+li p {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* edit and delete icons */
+
+li i {
+    font-size: 16px;
+    margin-top: 24px;
+}
+
+li i:first-of-type:hover {
+    color: #4285f4 !important;
+}
+
+li i:hover {
+    cursor: pointer;
+    color: #ea4335;
+}
+
+li i:first-of-type {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* --------------------------------- */
+
+button {
+    margin-top: 2.56rem;
+    margin-left: 5px;
+    height: 30px;
+    width: 80px;
+    color:#14141f;
+    background: #ffa623;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 900;
+    font-size: 15px;
+    transition: background-color 200ms ease;
+}
+
+button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #34a853;
+}
+
+@media only screen and (max-width: 750px) {
+    h1 {
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: white;
+        margin-bottom: 50px;
+    }
+    .inputs {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-column {
+        width: 280px;
+        margin-bottom: 20px;
+    }
+    .flex-column label {
+        margin-bottom: -10px;
+    }
+    button {
+        margin-top: 0;
+        margin-left: 13.5rem;
+    }
+    h3 {
+        margin-left: 13rem;
+        margin-top: 18px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    h1 {
+        font-size: 16px;
+        text-align: center;
+    }
+    li {
+        margin-bottom: 30px;
+    }
+    li p {
+        display: block;
+        margin-left: 20px;
+        margin-bottom: 6px;
+        font-size: 17px;
+    }
+    li i {
+        font-size: 16px;
+        margin-top: 2px;
+    }
+}
