@@ -14,42 +14,35 @@
         <h1> Accounting for my expenses</h1>
         <div class="inputs">
             <div class="flex-column">
-                <label for="store">Where was it spent:</label> <br>
-                <input type="text" id="store">
+                <label for="store"> Where was it spent: </label> <br>
+                <input 
+                    name=""
+                    type="text" 
+                    id="storeInput"
+                    placeholder="Amazon">
             </div>
 
             <div class="flex-column">
-                <label for="price">Where was it spent:</label> <br>
-                <input type="text" id="price">
+                <label for="price">How much was spent:</label> <br>
+                <input 
+                    type="text" 
+                    id="priceInput"
+                    placeholder="129.99">
             </div>
-            <button title="add item">Add</button>
+            <button id="addButton" title="add item">Add</button>
         </div>
-        <h3>Total: 100 Dollars</h3>
+        <h3 id="totalAmountId">Total: 0 Dollars</h3>
 
 
         <div class="list">
             <ol>
-                <li>
+                <!-- <li>
                     <p class="store-name">{%STORE-NAME%}</p>
                     <p class="date">{%DATE%}</p>
                     <p class="price">{%PRICE%}</p>
                     <i class="fa-solid fa-pencil" title="edit item"></i>
                     <i class="fa-solid fa-trash" title="delete item"></i>
-                </li>
-                <li>
-                    <p class="store-name">{%STORE-NAME%}</p>
-                    <p class="date">{%DATE%}</p>
-                    <p class="price">{%PRICE%}</p>
-                    <i class="fa-solid fa-pencil" title="edit item"></i>
-                    <i class="fa-solid fa-trash" title="delete item"></i>
-                </li>
-                <li>
-                    <p class="store-name">{%STORE-NAME%}</p>
-                    <p class="date">{%DATE%}</p>
-                    <p class="price">{%PRICE%}</p>
-                    <i class="fa-solid fa-pencil" title="edit item"></i>
-                    <i class="fa-solid fa-trash" title="delete item"></i>
-                </li>
+                </li> -->
             </ol>
         </div>
     </div>
