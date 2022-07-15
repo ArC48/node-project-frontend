@@ -19,6 +19,13 @@ body {
     padding: 40px;
 }
 
+#totalAmountId {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    font-weight: 100;
+    color: #34a853;
+}
+
 h1 {
     font-family: 'Major Mono Display', monospace;
     letter-spacing: 2px;
@@ -65,21 +72,21 @@ li p {
 
 /* edit and delete icons */
 
-li i {
+.icon {
     font-size: 16px;
     margin-top: 24px;
 }
 
-li i:first-of-type:hover {
+.edit:hover {
     color: #4285f4 !important;
 }
 
-li i:hover {
+.icon:hover {
     cursor: pointer;
     color: #ea4335;
 }
 
-li i:first-of-type {
+.edit {
     margin-left: 20px;
     margin-right: 10px;
 }
@@ -105,6 +112,11 @@ button:hover {
     cursor: pointer;
     color: black;
     background-color: #34a853;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 750px) {
