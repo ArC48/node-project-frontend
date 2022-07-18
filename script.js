@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 const apiBaseUrl = 'http://localhost:4000/expenses';
 
 // headers info
@@ -25,10 +26,33 @@ const fetchWithBody = async (method, body, id) => {
   });
 };
 
+// delete existing expense by ID
+const deleteExpense = async (id) => {
+  try {
+    if (id) {
+      const fetchDelete = await fetchWithoutBody('DELETE', id);
+      const expensesList = await fetchDelete.json();
+      createExpenseHTML(expensesList);
+    } else {
+      const err = document.getElementById('errors');
+      err.innerText = 'wrong ID, try existing one!';
+    }
+  } catch (err) {
+    document.getElementById('errors').style.display = 'block';
+    document.getElementById('errors').innerText = err;
+  }
+};
+
 const createExpenseHTML = (expense) => {
   let expensesTotal = 0;
   const expensesContainer = document.querySelector('.orderedList');
   expensesContainer.innerHTML = '';
+
+  if (!expense.length) {
+    document.getElementById('errors').style.display = 'block';
+    document.getElementById('errors').innerText = 'No Expenses in the container!';
+    document.getElementById('totalAmountId').innerText = 'Total: $0';
+  }
 
   expense.forEach((eachExpense) => {
     const {
@@ -63,13 +87,28 @@ const createExpenseHTML = (expense) => {
     editButtonIcon.className = 'fa-solid fa-pencil edit icon';
     deleteButtonIcon.className = 'fa-solid fa-trash delete icon';
 
+    // titles on buttons
+    editButtonIcon.title = 'edit element';
+    deleteButtonIcon.title = 'delete element';
+
     // assigning values to elements from the API
     storeName.innerText = text;
     dateElement.innerText = updatedAt;
     priceElement.innerText = `$${price}`;
 
     orderedList.append(listItems);
-    listItems.append(storeName, dateElement, priceElement, editButtonIcon, deleteButtonIcon);
+    listItems.append(
+      storeName,
+      dateElement,
+      priceElement,
+      editButtonIcon,
+      deleteButtonIcon,
+    );
+
+    // click events
+    deleteButtonIcon.addEventListener('click', () => {
+      deleteExpense(id);
+    });
   });
 };
 
@@ -124,14 +163,7 @@ const render = async () => {
   const fetchedData = await fetchWithoutBody('GET');
   const fetchedExpenses = await fetchedData.json();
 
-  if (fetchedExpenses.length) {
-    createExpenseHTML(fetchedExpenses);
-  } else {
-    document.getElementById('errors').style.display = 'block';
-    document.getElementById('errors').innerText = 'No Expenses in the container!';
-    document.getElementById('totalAmountId').innerText = 'Total: $0';
-    createExpenseHTML(fetchedExpenses);
-  }
+  createExpenseHTML(fetchedExpenses);
 };
 
 window.onload = () => {
