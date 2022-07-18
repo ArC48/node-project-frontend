@@ -82,7 +82,7 @@ const expenseSampleCreate = async () => {
   const errors = [];
 
   if (Number(priceInput.value) === 0) {
-    errors.push('Price must be at least 1');
+    errors.push('Price can\'t be 0');
   }
   if (!storeInput.value || !priceInput.value) {
     errors.push('Input Fields Can\'t be Empty!');
