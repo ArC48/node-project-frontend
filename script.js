@@ -39,7 +39,7 @@ const createExpenseHTML = (expense) => {
 
     const totalAmount = document.getElementById('totalAmountId');
     const orderedList = document.querySelector('.orderedList');
-    totalAmount.textContent = `Total: $${expensesTotal}`;
+    totalAmount.textContent = `Total: $${expensesTotal.toFixed(2)}`;
 
     // create block for the list items
     const listItems = document.createElement('li');
@@ -79,7 +79,7 @@ const expenseSampleCreate = async () => {
   errorTexts.innerText = '';
   const errors = [];
 
-  if (priceInput.value[0] === '0') {
+  if (Number(priceInput.value) === 0) {
     errors.push('Price must be at least 1');
   }
   if (!storeInput.value || !priceInput.value) {
