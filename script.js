@@ -27,6 +27,8 @@ const fetchWithBody = async (method, body, id) => {
 
 const createExpenseHTML = (expense) => {
   let expensesTotal = 0;
+  const expensesContainer = document.querySelector('.orderedList');
+  expensesContainer.innerHTML = '';
 
   expense.forEach((eachExpense) => {
     const {
