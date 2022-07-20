@@ -74,7 +74,6 @@ li p {
 
 .icon {
     font-size: 16px;
-    margin-top: 24px;
 }
 
 .edit:hover {
@@ -89,6 +88,22 @@ li p {
 .edit {
     margin-left: 20px;
     margin-right: 10px;
+}
+
+.price {
+    margin-left: 2px;
+}
+
+.dollar-sign {
+    text-align: center;
+    margin-left: 25px;
+    font-size: 20px;
+}
+
+.icons-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* --------------------------------- */
@@ -127,6 +142,69 @@ h4 li {
     font-size: 18px;
 }
 
+.name-input {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 150px;
+    font-size: 15px;
+    color: #14141f;
+}
+.confirm-button {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 8px;
+}
+
+.confirm-button:hover {
+    color: #34a853;
+    cursor: pointer;
+}
+
+.cancel-button {
+    font-size: 20px;
+}
+
+.cancel-button:hover {
+    color:#ea4335;
+    cursor: pointer;
+}
+
+.listItemClass {
+    display: grid;
+    grid-template-columns: 150px 350px 100px;
+    align-items: center;
+    line-height: 50px;
+}
+
+.date-price-div {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 200px 150px 118px;
+
+}
+
+.listItemsClassDiv {
+    display: list-item;
+    margin-left: 50px;
+}
+
+.store-name {
+    overflow:hidden;
+}
+
+.dollar-sign {
+    overflow:hidden;
+}
+
+.date {
+    text-align: center;
+}
+
+.response-date {
+    text-align: center;
+}
+
+
 @media only screen and (max-width: 750px) {
     h1 {
         font-size: 20px;
@@ -156,13 +234,10 @@ h4 li {
     }
 }
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 630px) {
     h1 {
         font-size: 16px;
         text-align: center;
-    }
-    li {
-        margin-bottom: 30px;
     }
     li p {
         display: block;
@@ -172,6 +247,41 @@ h4 li {
     }
     li i {
         font-size: 16px;
-        margin-top: 2px;
+        /* margin-top: 2px; */
+    }
+    .listItemClass {
+        display: flex;
+        justify-content: center;
+        /* grid-template-columns: 70px 150px; */
+        line-height: 20px;
+        width: 250px;
+    }
+    .date-price-div {
+        margin-top: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .listItemsClassDiv {
+        display: list-item;
+        margin-left: 20px;
+    }
+    .icons-div {
+        margin-top: 1rem;
+    }
+    .store-name {
+        margin-right: 10px;
+        width: 70px;
+        text-overflow:ellipsis;
+    }
+
+    .dollar-sign {
+        width: 60px;
+        text-overflow:ellipsis;
+    }
+    .response-date {
+        display: none;
     }
 }
+
